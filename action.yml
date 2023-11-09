@@ -1,0 +1,25 @@
+name: Upload Cloudflare R2 
+description: "Upload files to Cloudflare R2"
+inputs:
+  account_id:
+    required: true
+    description: "account id"
+  access_key_id:
+    required: true
+    description: "access key id"
+  secret_access_key:
+    required: true
+    description: "secret access key"
+  bucket:
+    required: true
+    description: "bucket name"
+  source_directory:
+    required: true
+    description: "source directory"
+  destination_directory:
+    required: false
+    default: ''
+    description: "destination directory"
+runs:
+  using: "node20"
+  main: "dist/index.mjs"
