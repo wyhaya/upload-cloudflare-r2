@@ -5,11 +5,11 @@ import * as path from 'path'
 import * as klawSync from 'klaw-sync'
 import * as core from '@actions/core'
 
-const ACCOUNT_ID = core.getInput('account_id')
-const ACCESS_KEY_ID = core.getInput('access_key_id')
-const SECRET_ACCESS_KEY = core.getInput('secret_access_key')
-const BUCKET = core.getInput('bucket')
-const SOURCE_DIRECTORY = core.getInput('source_directory')
+const ACCOUNT_ID = core.getInput('account_id', { required: true })
+const ACCESS_KEY_ID = core.getInput('access_key_id', { required: true })
+const SECRET_ACCESS_KEY = core.getInput('secret_access_key', { required: true })
+const BUCKET = core.getInput('bucket', { required: true })
+const SOURCE_DIRECTORY = core.getInput('source_directory', { required: true })
 const DESTINATION_DIR = core.getInput('destination_directory')
 
 let destination = DESTINATION_DIR

@@ -64938,11 +64938,11 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 
 
 
-const ACCOUNT_ID = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('account_id')
-const ACCESS_KEY_ID = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('access_key_id')
-const SECRET_ACCESS_KEY = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('secret_access_key')
-const BUCKET = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('bucket')
-const SOURCE_DIRECTORY = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('source_directory')
+const ACCOUNT_ID = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('account_id', { required: true })
+const ACCESS_KEY_ID = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('access_key_id', { required: true })
+const SECRET_ACCESS_KEY = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('secret_access_key', { required: true })
+const BUCKET = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('bucket', { required: true })
+const SOURCE_DIRECTORY = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('source_directory', { required: true })
 const DESTINATION_DIR = _actions_core__WEBPACK_IMPORTED_MODULE_4__.getInput('destination_directory')
 
 let destination = DESTINATION_DIR

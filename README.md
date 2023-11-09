@@ -7,7 +7,7 @@ Github Action which upload files to Cloudflare R2
 ```yaml
 steps:
   - name: Upload to R2
-    uses: wyhaya/upload-cloudflare-r2
+    uses: wyhaya/upload-cloudflare-r2@[SHA]
     with:
       account_id: ${{ secrets.ACCOUNT_ID }}
       access_key_id: ${{ secrets.ACCESS_KEY_ID }}
