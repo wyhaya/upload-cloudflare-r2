@@ -1,6 +1,7 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
-import { createReadStream } from 'fs'
+import { createReadStream, statSync } from 'fs'
 import { lookup } from 'mime-types'
+import prettyBytes from 'pretty-bytes'
 import * as path from 'path'
 import * as klawSync from 'klaw-sync'
 import * as core from '@actions/core'
@@ -42,8 +43,9 @@ for (let file of files) {
     })
     const task = async () => {
         try {
+            const size = prettyBytes(statSync(file.path).size)
             await client.send(object)
-            core.info(`Uploaded: '${file.path}' '${key}' '${mime}'`)
+            core.info(`Uploaded: '${file.path}' '${key}' '${mime}' '${size}'`)
         } catch (err) {
             core.error(`Failed: '${file.path}' '${key}' '${mime}'`)
             core.setFailed(err)
