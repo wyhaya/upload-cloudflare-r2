@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "@actions/core": "^1.11.1",
-        "@aws-sdk/client-s3": "^3.848.0",
+        "@aws-sdk/client-s3": "=3.726.0",
         "klaw-sync": "^7.0.0",
         "mime-types": "^3.0.1",
         "pretty-bytes": "^7.0.0"
