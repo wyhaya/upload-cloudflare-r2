@@ -67,7 +67,7 @@ const files = readdirSync(sourceDir, { recursive: true, withFileTypes: true })
 const tasks = []
 for (let filePath of files) {
     const body = createReadStream(filePath)
-    const key = destination + path.relative(sourceDir, filePath)
+    const key = destination + path.relative(sourceDir, filePath).split(path.sep).join('/')
     const mime = lookup(key) || 'application/octet-stream'
     const cache = cacheControl(key)
 
