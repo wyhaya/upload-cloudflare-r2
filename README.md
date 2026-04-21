@@ -16,4 +16,11 @@ steps:
       source_directory: target/files/
       # Optional
       destination_directory: release/
+      # Optional
+      cache_control: |
+        \.html$          no-cache
+        (\.css|\.js)$    public, max-age=31536000, immutable
+
+        # If a match has been found, clear the rule.
+        ^demo\.html$     _
 ```

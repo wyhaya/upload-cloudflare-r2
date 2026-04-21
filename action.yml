@@ -1,25 +1,29 @@
-name: Upload Cloudflare R2 
-description: "Upload files to Cloudflare R2"
+name: Upload Cloudflare R2
+description: 'Upload files to Cloudflare R2'
 inputs:
   account_id:
     required: true
-    description: "account id"
+    description: 'account id'
   access_key_id:
     required: true
-    description: "access key id"
+    description: 'access key id'
   secret_access_key:
     required: true
-    description: "secret access key"
+    description: 'secret access key'
   bucket:
     required: true
-    description: "bucket name"
+    description: 'bucket name'
   source_directory:
     required: true
-    description: "source directory"
+    description: 'source directory'
   destination_directory:
     required: false
     default: ''
-    description: "destination directory"
+    description: 'destination directory'
+  cache_control:
+    required: false
+    default: ''
+    description: 'Set cache control headers based on regex patterns'
 runs:
-  using: "node24"
-  main: "dist/index.mjs"
+  using: 'node24'
+  main: 'dist/index.js'
